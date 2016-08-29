@@ -5,5 +5,9 @@ gunzip SRR072893.fastq.gz
 head SRR072893.fastq
 hisat2 -p 4 -x ~/data/BDGP6/BDGP6 -U SRR072893.fastq -S mappedreads 
 samtools view -Sb mappedreads > 893mapped
+samtools sort 893mapped -o 893mappedsorted.bam
+samtools index 893mappedsorted.bam 
+
+
 
 
