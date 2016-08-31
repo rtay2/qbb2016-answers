@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-f = open("mappedreads.sam")
+import sys
+f = open(sys.argv[1])
 
 count = 0 
 final_total = 0 
