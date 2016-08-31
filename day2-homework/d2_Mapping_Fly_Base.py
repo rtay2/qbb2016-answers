@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-f = open("fly.txt")
+import sys
+f = open(sys.argv[1])
     
 for line in f: 
     if "DROME" in line:
