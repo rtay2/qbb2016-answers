@@ -19,7 +19,7 @@ our_data_ctab = open(sys.argv[1])
 option = sys.argv[2]
 
 for line in our_data_ctab.readlines():
-    line=line.strip() ## Need to strip the ctab file, so cols can be recognized
+    line=line.strip() ## Strip so cols can be recognized
     cols = line.split("\t")
     ctab_FBg = cols[8]
     if ctab_FBg in dict1:
