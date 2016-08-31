@@ -1,6 +1,8 @@
 #!/usr/bin/env python
  
-f = open("mappedreads.sam")
+## SRR method will give you 'unaligned alignments' 
+import sys
+f = open(sys.argv[1])
 
 count = 0
 for line in f.readlines():
