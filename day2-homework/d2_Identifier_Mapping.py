@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-'''Takes three arguments(full output file from mapping file, ctab file in other directory to be matched against the dictionary, option as either "Ignore" or "Default" on whether ctab lines with no fly id match should be ignored or the line read with a * in place of the uni id). 
+'''Takes the full output file from mapping file, ctab file in other directory to be matched against the dictionary, option as either "Ignore" or "Default" on whether ctab lines with no fly id match should be ignored or the line read with a * in place of the uni id. 
 '''
 
 import sys
