@@ -63,9 +63,5 @@ plt.ylabel("mRNA Abundance (FPKM)")
 plt.xticks(x, xlabels)
 plt.xlim([0,8])
 plt.title("Sxl")
-plt.show()
-
-print "All finished"
-
-# plt.savefig("timecourse.png")
-# plt.close()
+plt.savefig("timecourse.png")
+plt.close()
