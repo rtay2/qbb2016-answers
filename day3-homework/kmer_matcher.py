@@ -18,13 +18,12 @@ for identifier, sequence in fasta.FASTAReader(query_file):
         else:
             kmer_hash[kmer].append(start)
         
-for seq_name, sequence in fasta.FASTAReader(target_file):
-    sequence = sequence.upper()
-    target_seq_kmer = {}
-    for g, i in enumerate(range(0,len(sequence) - k)):
+for seq_name, sequence2 in fasta.FASTAReader(target_file):
+    sequence2 = sequence2.upper()
+    for g, i in enumerate(range(0,len(sequence2) - k)):
         start = i
         end = i + k
-        kmer = sequence[i:i+k]
+        kmer = sequence2[i:i+k]
         if kmer in kmer_hash:
             print seq_name, start, kmer_hash[kmer], kmer
         if g > 1000:
