@@ -6,6 +6,7 @@ k = int(sys.argv[1])
 query_file = open(sys.argv[2])
 target_file = open(sys.argv[3])
 
+# Making dictionary of query; key = kmer, value = start position (in the query)
 kmer_hash = {}
 
 for identifier, sequence1 in fasta.FASTAReader(query_file):
@@ -19,20 +20,20 @@ for identifier, sequence1 in fasta.FASTAReader(query_file):
         else:
             kmer_hash[kmer].append(start)
 
+# Create an empty list that eventual matches will output to
 box_of_matches = []
 
 for seq_name, sequence2 in fasta.FASTAReader(target_file):
     sequence2 = sequence2.upper()
     target_seq_kmer = {}
-    file_one_output =[]
     for g, i in enumerate(range(0,len(sequence2) - k)):
-        i = i
+        i = i # Defining start and end in seq2
         j = i + k
         kmer = sequence2[i:i+k]
         if kmer in kmer_hash:
-           for start in kmer_hash[kmer]:
+           for start in kmer_hash[kmer]: # Defining start and end in seq1
                end = start + k
-               n = 1
+               n = 1 # The increment you go up vs. down will vary, set to different vars
                w = 1
                while True:
                    if sequence2[i-n] == sequence1[start-n]:
@@ -43,14 +44,14 @@ for seq_name, sequence2 in fasta.FASTAReader(target_file):
                        break
                n -= 1
                while True:
-                   if j+w == len(sequence2) or end+w == len(sequence1):
+                   if j+w == len(sequence2) or end+w == len(sequence1): 
                        break
                    if sequence2[j+w] == sequence1[end+w]:
                        w += 1
                    else:
                        break
                        
-               match = sequence2[i-n+1:j+w]
+               match = sequence2[i-n+1:j+w] # Can choose either sequence1 or 2 to print match
                box_of_matches.append(match)
                
 box_of_matches.sort( reverse=True, key=len )
