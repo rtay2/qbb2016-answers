@@ -14,4 +14,6 @@ for i in files:
     results = model.fit()
     print i.replace(".bed","")
     print results.summary()
+    print "\n"
+    
     
