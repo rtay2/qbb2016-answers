@@ -50,18 +50,20 @@ for sample in repfile[df_roi6]["sample"]:
     male_reps.append(df[df_roi7]["FPKM"].values)
 
 
-x = [0, 1,2,3,4,5,6,7]
+x = [0,1,2,3,4,5,6,7]
 xlabels = ["10","11", "12","13", "14A", "14B", "14C", "14D"]
 plt.figure()
-plt.plot(fem_Sxl, label = "Female", color = 'r', linewidth = 2.5)
-plt.plot(male_Sxl, label = "Male", color = 'b', linewidth = 2.5)
-plt.plot([4,5,6,7],fem_reps, 'ro')
-plt.plot([4,5,6,7], male_reps, 'bo')
-plt.legend(loc="upper left")
+plt.plot(fem_Sxl, label = "female", color = 'r', linewidth = 2.5)
+plt.plot(male_Sxl, label = "male", color = 'b', linewidth = 2.5)
+plt.plot([4,5,6,7],fem_reps, 'ro', markeredgewidth=0.0)
+plt.plot([4,5,6,7], male_reps, 'bo', markeredgewidth=0.0)
+plt.tick_params(axis='x',top='off')
+plt.tick_params(axis='y',right='off')
+plt.legend(loc="upper left", frameon=False)
 plt.xlabel("Developmental Stage")
 plt.ylabel("mRNA Abundance (FPKM)")
 plt.xticks(x, xlabels)
-plt.xlim([0,8])
-plt.title("Sxl")
+plt.xlim([-0.5,7.5])
+plt.title("Sxl", style='italic')
 plt.savefig("timecourse.png")
 plt.close()
