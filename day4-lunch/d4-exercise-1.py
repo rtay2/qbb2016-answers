@@ -29,7 +29,8 @@ print value2
 
 
 plt.figure()
-plt.boxplot([value1, value2],labels = ["893","915"])
+plt.boxplot([value1, value2],labels = ["SRR072893","SRR072915"])
+plt.title("Sxl Expression in Fly Embryonic Stages")
 plt.ylabel("Log(FPKM)")
 plt.savefig("Sxl.png")
 plt.close()
