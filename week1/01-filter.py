@@ -19,20 +19,13 @@ for line in nuc:
     else:
         if "-" in line: 
             no_gaps = line.replace("-", "")
-            # no_gaps = no_gaps.replace("R","A")
-            # no_gaps = no_gaps.replace("Y","T")
             no_gaps_fields = no_gaps.rstrip("\r\n").split("\t")
             print ">" + str(count) + "\n" + no_gaps_fields[2]
             count += 1
         else:
-            # no_gaps = line.replace("R","A")
-            # no_gaps = no_gaps.replace("Y","T")
-            # no_gaps_fields = no_gaps.rstrip("\r\n").split("\t")
             print ">" + str(count) + "\n" + seq
             count += 1
-                
-        # if "W" or "K" or "R" or "Y" or "S" or "N" in line:
-        #     continue
+
             
             
         
