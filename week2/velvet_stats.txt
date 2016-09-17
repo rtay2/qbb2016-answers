@@ -1,0 +1,5 @@
+Count:303
+Max Length:998
+Min Length:61
+Average Length:187.9669967
+N50 Contig Length:255

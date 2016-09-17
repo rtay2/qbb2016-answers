@@ -1,0 +1,5 @@
+Count:1
+Max Length:100000
+Min Length:100000
+Average Length:100000.0
+N50 Contig Length:100000
