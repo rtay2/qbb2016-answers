@@ -1,0 +1,13 @@
+Step,real,user,sys
+Low Coverage,,,
+velveth,0.022,0.002,0.004
+velvetg,0.027,0.006,0.005
+spades,4.251,4.747,0.844
+lastz velvet,1.394,1.316,0.054
+lastz spades,1.467,1.359,0.061
+High Coverage,,,
+velveth,11.674,11.005,0.409
+velvetg,2.408,0.175,0.169
+spades,118.852,259.163,4.993
+lastz velvet,0.011,0.001,0.002
+lastz spades,2.051,1.908,0.063
